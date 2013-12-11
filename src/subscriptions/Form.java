@@ -1,9 +1,9 @@
-package ru.mvideo.omni.sync.subscriptions;
+package subscriptions;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import ru.mvideo.omni.sync.subscriptions.mapping.Mapping_Lamp;
-import ru.mvideo.omni.sync.subscriptions.mapping.Mapping_Siebel;
+import subscriptions.mapping.Mapping_Lamp;
+import subscriptions.mapping.Mapping_Siebel;
 
 /**
  *

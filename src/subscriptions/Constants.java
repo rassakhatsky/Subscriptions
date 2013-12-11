@@ -1,4 +1,4 @@
-package ru.mvideo.omni.sync.subscriptions;
+package subscriptions;
 
 /**
  *

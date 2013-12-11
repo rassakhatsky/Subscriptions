@@ -1,15 +1,24 @@
-package ru.mvideo.omni.sync.subscriptions.systems;
+package subscriptions.systems;
 
 import java.util.ArrayList;
-import ru.mvideo.omni.sync.subscriptions.systems.data.Subscription;
+import subscriptions.systems.data.Subscription;
 
 /**
  *
  * @author rassakhatsky
  */
-public class LAMP {
+public class Siebel {
 
+    private String connectionType;
     private final ArrayList<Subscription> subscription = new ArrayList<>();
+
+    public void setConnectionType(String connectionType) {
+        this.connectionType = connectionType;
+    }
+
+    public String getConnectionType() {
+        return this.connectionType;
+    }
 
     public void setSubscription(String subscriptionID, boolean status, String frequency) {
         if (subscription.size() > 0) {

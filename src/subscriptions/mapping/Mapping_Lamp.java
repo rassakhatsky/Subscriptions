@@ -1,8 +1,8 @@
-package ru.mvideo.omni.sync.subscriptions.mapping;
+package subscriptions.mapping;
 
-import ru.mvideo.omni.sync.subscriptions.Constants;
-import ru.mvideo.omni.sync.subscriptions.systems.LAMP;
-import ru.mvideo.omni.sync.subscriptions.systems.SAP_CRM;
+import subscriptions.Constants;
+import subscriptions.systems.LAMP;
+import subscriptions.systems.SAP_CRM;
 
 /**
  *

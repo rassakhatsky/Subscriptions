@@ -1,10 +1,10 @@
-package ru.mvideo.omni.sync.subscriptions;
+package subscriptions;
 
-import ru.mvideo.omni.sync.subscriptions.mapping.Mapping_Lamp;
-import ru.mvideo.omni.sync.subscriptions.mapping.Mapping_Siebel;
-import ru.mvideo.omni.sync.subscriptions.systems.LAMP;
-import ru.mvideo.omni.sync.subscriptions.systems.SAP_CRM;
-import ru.mvideo.omni.sync.subscriptions.systems.Siebel;
+import subscriptions.mapping.Mapping_Lamp;
+import subscriptions.mapping.Mapping_Siebel;
+import subscriptions.systems.LAMP;
+import subscriptions.systems.SAP_CRM;
+import subscriptions.systems.Siebel;
 
 /**
  *

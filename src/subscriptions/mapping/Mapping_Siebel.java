@@ -1,8 +1,8 @@
-package ru.mvideo.omni.sync.subscriptions.mapping;
+package subscriptions.mapping;
 
-import ru.mvideo.omni.sync.subscriptions.Constants;
-import ru.mvideo.omni.sync.subscriptions.systems.SAP_CRM;
-import ru.mvideo.omni.sync.subscriptions.systems.Siebel;
+import subscriptions.Constants;
+import subscriptions.systems.SAP_CRM;
+import subscriptions.systems.Siebel;
 
 /**
  *
