@@ -2,8 +2,6 @@ package subscriptions;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import subscriptions.mapping.Mapping_Lamp;
-import subscriptions.mapping.Mapping_Siebel;
 
 /**
  *
@@ -11,7 +9,7 @@ import subscriptions.mapping.Mapping_Siebel;
  */
 public class Form extends javax.swing.JFrame {
 
-    Mapping mapping;
+    Main mapping;
     public Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     public int w = (dim.width);
     public int h = (dim.height);
@@ -21,7 +19,7 @@ public class Form extends javax.swing.JFrame {
      */
     public Form() {
         initComponents();
-        mapping = new Mapping();
+        mapping = new Main();
         mapping.setInitialData();
         this.updateData();
     }
@@ -80,6 +78,7 @@ public class Form extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         jCheckBox8.setText("jCheckBox8");
 
@@ -353,6 +352,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("Send ALL");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -387,7 +393,9 @@ public class Form extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -495,7 +503,8 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4)))
+                    .addComponent(jButton4)
+                    .addComponent(jButton5)))
         );
 
         pack();
@@ -520,7 +529,7 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        ////Новости М.Видео
+        //Новости М.Видео
         mapping.crm_client.setSubscription(Constants.Z_SUBSCR_NEWS, jCheckBox4.isSelected(), jComboBox2.getSelectedItem().toString());
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
@@ -661,7 +670,7 @@ public class Form extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //Send data from CRM (Email).
-        mapping.fromCRM("Email");
+        mapping.fromCRM(false, true);
         this.updateData();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -673,7 +682,7 @@ public class Form extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //Send data from CRM (SMS).
-        mapping.fromCRM("SMS");
+        mapping.fromCRM(true, false);
         this.updateData();
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -687,6 +696,12 @@ public class Form extends javax.swing.JFrame {
         //Siebel Connection type
         mapping.siebel.setConnectionType(jComboBox6.getSelectedItem().toString());
     }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        //Send data from CRM.
+        mapping.fromCRM(true, true);
+        this.updateData();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -845,6 +860,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
