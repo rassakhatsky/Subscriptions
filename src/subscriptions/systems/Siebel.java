@@ -7,7 +7,7 @@ import subscriptions.systems.data.Subscription;
  *
  * @author rassakhatsky
  */
-public class Siebel {
+public class Siebel implements System{
 
     private String connectionType;
     private final ArrayList<Subscription> subscriptions = new ArrayList<>();
@@ -37,6 +37,7 @@ public class Siebel {
      * @param status
      * @param frequency
      */
+    @Override
     public void setSubscription(String subscriptionID, boolean status, String frequency) {
         if (subscriptions.size() > 0) { //Check if list empty
             boolean subscription_not_exists = true;
@@ -61,6 +62,7 @@ public class Siebel {
      * @param subscriptionID
      * @return
      */
+    @Override
     public Subscription getSubscription(String subscriptionID) {
         Subscription result = null;
         for (Subscription subs : subscriptions) {

@@ -8,7 +8,7 @@ import subscriptions.systems.data.Subscription;
  *
  * @author rassakhatsky
  */
-public class LAMP {
+public class LAMP implements System{
 
     private final ArrayList<Subscription> subscriptions = new ArrayList<>(); //Subcriptions list.
 
@@ -19,6 +19,7 @@ public class LAMP {
      * @param status
      * @param frequency
      */
+    @Override
     public void setSubscription(String subscriptionID, boolean status, String frequency) {
         if (subscriptions.size() > 0) { //Check if list empty
             boolean subscription_not_exists = true;
@@ -43,6 +44,7 @@ public class LAMP {
      * @param subscriptionID
      * @return
      */
+    @Override
     public Subscription getSubscription(String subscriptionID) {
         Subscription result = null;
         for (Subscription subs : subscriptions) {
